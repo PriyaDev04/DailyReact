@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from 'react'
-
 function TodoApp() {
     const [task, setTask] = useState('')
     const [todos, setTodos] = useState(() => {
         const saved = localStorage.getItem('todos')
         return saved ? JSON.parse(saved) : []
     })
-
     useEffect(() => {
         localStorage.setItem('todos', JSON.stringify(todos))
     }, [todos])
-
     const handleAdd = (e) => {
         e.preventDefault()
         if (task.trim() === '') return
         setTodos([...todos, { text: task, done: false }])
         setTask('')
+
     }
 
     const toggleDone = (index) => {
@@ -29,7 +27,6 @@ function TodoApp() {
         updated.splice(index, 1)
         setTodos(updated)
     }
-
     return (
         <>
             <form onSubmit={handleAdd}>
@@ -40,8 +37,22 @@ function TodoApp() {
                     placeholder="Enter a task..."
                 />
                 <button type="submit">Add</button>
-            </form>
+                <input
+                    type="text"
+                    value={task}
+                    onChange={(e) => setTask(e.target.value)}
+                    placeholder="Enter a task..."
+                />
+                <button type="submit">Add</button>
+                <input
+                    type="text"
+                    value={task}
+                    onChange={(e) => setTask(e.target.value)}
+                    placeholder="Enter a task..."
+                />
+                <button type="submit">Add</button>
 
+            </form >
             <ul>
                 {todos.map((todo, index) => (
                     <li
@@ -54,11 +65,7 @@ function TodoApp() {
                             e.stopPropagation()
                             deleteTodo(index)
                         }}>X</button>
-                    </li>
-                ))}
-            </ul>
-        </>
+                    </li>))} </ul></>
     )
 }
-
 export default TodoApp

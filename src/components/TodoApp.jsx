@@ -50,6 +50,48 @@ function TodoApp() {
                     onChange={(e) => setTask(e.target.value)}
                     placeholder="Enter a task..."
                 />
+                <input
+                    type="text"
+                    value={task}
+                    onChange={(e) => setTask(e.target.value)}
+                    placeholder="Enter a task..."
+                />
+                <input
+                    type="text"
+                    value={task}
+                    onChange={(e) => setTask(e.target.value)}
+                    placeholder="Enter a task..."
+                />
+                <input
+                    type="text"
+                    value={task}
+                    onChange={(e) => setTask(e.target.value)}
+                    placeholder="Enter a task..."
+                />
+                <input
+                    type="text"
+                    value={task}
+                    onChange={(e) => setTask(e.target.value)}
+                    placeholder="Enter a task..."
+                />
+                <input
+                    type="text"
+                    value={task}
+                    onChange={(e) => setTask(e.target.value)}
+                    placeholder="Enter a task..."
+                />
+                <input
+                    type="text"
+                    value={task}
+                    onChange={(e) => setTask(e.target.value)}
+                    placeholder="Enter a task..."
+                />
+                <input
+                    type="text"
+                    value={task}
+                    onChange={(e) => setTask(e.target.value)}
+                    placeholder="Enter a task..."
+                />
                 <button type="submit">Add</button>
 
             </form >
